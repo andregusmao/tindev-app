@@ -5,6 +5,8 @@ import { SafeAreaView, View, Image, Text, TouchableOpacity, StyleSheet } from 'r
 
 import api from '../services/api';
 
+import API_URL from '../config';
+
 import logo from '../assets/logo.png';
 import dislike from '../assets/dislike.png';
 import like from '../assets/like.png';
@@ -41,7 +43,7 @@ export default function Main({ navigation }) {
     }, [id]);
 
     useEffect(() => {
-        const socket = io("http://localhost:3333", {
+        const socket = io(API_URL, {
             query: {
                 user: id
             }
